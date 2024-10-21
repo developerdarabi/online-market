@@ -5,7 +5,7 @@ import DocumentTitle from "../utils/DocumentTitle";
 export default function ProductsPage() {
     return (
         <MaxWidth>
-            <DocumentTitle title="محصولات" />
+            <DocumentTitle title="products" />
             <AllProducts />
         </MaxWidth>
     )

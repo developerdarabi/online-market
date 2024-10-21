@@ -18,7 +18,7 @@ export default function ProductPage() {
 
     return (
         <MaxWidth>
-            <DocumentTitle title="جزیات محصول"/>
+            <DocumentTitle title="product details"/>
             <section className="relative mt-24">
                 <div className="w-full mx-auto px-4 sm:px-6 lg:px-0">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto max-md:px-2 ">
