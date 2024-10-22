@@ -10,7 +10,7 @@ export default function index(props: ProductType) {
     return (
         <div className="relative flex w-full flex-col overflow-hidden rounded-lg border border-gray-100 bg-white hover:shadow-xl duration-300">
             <div className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl">
-                <img className="object-cover m-auto mix-blend-multiply" src={image} alt="product image" />
+                <img className="object-cover m-auto mix-blend-multiply " src={image} alt="product image" />
             </div>
             <div className="mt-4 px-5 pb-5">
                 <Link to={`${pathname.endsWith('products')?id:'products/'+id}`} className="h-[90px] overflow-hidden">

@@ -20,7 +20,7 @@ export default function ProductPage() {
             <section className="relative md:mt-24 py-4">
                 <div className="w-full mx-auto px-4 sm:px-6 lg:px-0">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto max-md:px-2 ">
-                        <div className="xl:aspect-[16/14] max-h-[600px]">
+                        <div className="xl:aspect-[16/14] aspect-[16/10]  max-h-[600px]">
                             <img src={data?.image} alt={data?.title}
                                 className="m-auto h-full object-fit mix-blend-multiply" />
                         </div>
@@ -136,7 +136,7 @@ export default function ProductPage() {
                                             </svg>
                                         </button>
                                     </div>
-                                    <button
+                                    <button 
                                         className="group py-4 px-5 rounded-full bg-indigo-50 text-indigo-600 font-semibold text-lg w-full flex items-center justify-center gap-2 transition-all duration-500 hover:bg-indigo-100">
                                         <svg className="stroke-indigo-600 " width="22" height="22" viewBox="0 0 22 22" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">

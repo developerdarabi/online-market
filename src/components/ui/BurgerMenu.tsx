@@ -12,7 +12,7 @@ export default function BurgerMenu({ children, isOpen, onClose }: { children: Re
 
     return (
         <>
-            <div ref={menuRef} className={`${isOpen ? "  w-2/3 bg-white border flex-col justify-start" : "w-0 opacity-0  overflow-hidden "} h-svh  absolute z-[100] top-0 left-0  duration-500`}>
+            <div ref={menuRef} className={`${isOpen ? "  w-2/3 bg-white border flex-col justify-start" : "w-0 opacity-0  overflow-hidden "} h-full  absolute z-[100] top-0 left-0  duration-500`}>
                 <div className="p-4 ">
                     <GrClose size={20} color="#000" onClick={() => onClose()} className="me-auto" />
                     {children}

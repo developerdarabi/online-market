@@ -1,5 +1,13 @@
 export interface UserType{
-    address:string
+    address:{
+        street:string
+        number:number
+        city:string
+        geolocation:{
+            lat:string
+            long:string
+        }
+    }
     id:number
     name:{
         firstname:string

@@ -1,7 +1,7 @@
-import logo from '../../assets/logo.png'
+import { FaShoppingBag } from "react-icons/fa";
 
-export default function Logo({size=50}:{size?:number}) {
+export default function Logo({ size = 50 }: { size?: number }) {
     return (
-        <img src={logo} className='' width={size} height={size}/>
+        <FaShoppingBag size={size} className="text-primary"/>
     )
 }

@@ -9,16 +9,13 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#FFA947'
+          DEFAULT: '#6366f1 '
         },
         secondary: {
-          DEFAULT: '#fafafa'
+          DEFAULT: '#eef2ff '
         },
-        hover: '#FFA947',
-        icons: '#FFA947',
-        text_color: '#333333',
         background: {
-          DEFAULT: '#D7DBDC',
+          DEFAULT: '#eef2ff ',
         }
       },
     },

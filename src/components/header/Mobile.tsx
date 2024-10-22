@@ -9,12 +9,10 @@ export default function MobileHeader() {
 
     return (
         <>
-            <header className="fixed top-0 right-0 z-50 w-full h-12 bg-[#05678E] flex items-center justify-between px-2">
-                <nav>
-                    <section className="flex z-[100] text-white">
-                        <TbMenuDeep onClick={() => setIsNavOpen((prev) => !prev)} size={25} />
-                    </section>
-                </nav>
+            <header className="fixed top-0 right-0 z-50 w-full h-12 bg-background flex items-center justify-between px-2">
+                <section className="flex z-[100] text-primary rotate-180">
+                    <TbMenuDeep onClick={() => setIsNavOpen((prev) => !prev)} size={30} />
+                </section>
                 <Logo size={25} />
             </header>
             <BurgerMenu isOpen={isNavOpen} onClose={() => setIsNavOpen(false)}>

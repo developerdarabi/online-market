@@ -4,7 +4,7 @@ export default function ProductLoading() {
         <section className="relative mt-24">
             <div className="w-full mx-auto px-4 sm:px-6 lg:px-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto max-md:px-2 ">
-                    <div className="h-[600px] bg-gray-500 animate-pulse rounded-xl" />
+                    <div className="xl:aspect-[16/14] aspect-[16/10]  max-h-[600px] bg-gray-500 animate-pulse rounded-xl" />
                     <div
                         className="data w-full lg:pr-8 pr-0 xl:justify-start justify-center flex items-center max-lg:pb-10 xl:my-2 lg:my-5 my-0">
                         <div className="data w-full max-w-xl">
