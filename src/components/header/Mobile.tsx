@@ -1,22 +1,29 @@
 import { useState } from "react";
-import Logo from "../ui/Logo";
 import { TbMenuDeep } from "react-icons/tb";
-import { GrClose } from "react-icons/gr";
+import { Link } from "react-router-dom";
+import BurgerMenu from "../ui/BurgerMenu";
+import Logo from "../ui/Logo";
 
 export default function MobileHeader() {
     const [isNavOpen, setIsNavOpen] = useState(false);
+
     return (
-        <header className="fixed top-0 left-0 z-50 w-full h-12 bg-[#05678E] flex items-center justify-between px-2">
-            <Logo size={25} />
-            <nav>
-                <section className="flex z-[100] text-white">
-                    <TbMenuDeep onClick={() => setIsNavOpen((prev) => !prev)} size={25}/>
-                    <div className={`${isNavOpen ? " absolute top-0 right-0 h-svh w-2/3 bg-white border flex-col justify-start" : "w-0 overflow-hidden "} duration-500`}>
-                        <GrClose size={25} color="#000" onClick={() => setIsNavOpen(false)} className="ms-auto"/>
-                        dfdf
-                    </div>
-                </section>
-            </nav>
-        </header>
+        <>
+            <header className="fixed top-0 right-0 z-50 w-full h-12 bg-[#05678E] flex items-center justify-between px-2">
+                <nav>
+                    <section className="flex z-[100] text-white">
+                        <TbMenuDeep onClick={() => setIsNavOpen((prev) => !prev)} size={25} />
+                    </section>
+                </nav>
+                <Logo size={25} />
+            </header>
+            <BurgerMenu isOpen={isNavOpen} onClose={() => setIsNavOpen(false)}>
+                <div className="flex flex-col items-start gap-6 my-8">
+                    <Link className="text-md font-medium hover:text-hover duration-100" to={'/'}>Home</Link>
+                    <Link className="text-md font-medium hover:text-hover duration-100" to={'/products'}>Products</Link>
+                    <Link className="text-md font-medium hover:text-hover duration-100" to={'/roles'}>Roles</Link>
+                </div>
+            </BurgerMenu>
+        </>
     )
 }

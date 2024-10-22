@@ -10,13 +10,15 @@ export const packsApi = baseApi.injectEndpoints({
                 };
             },
             providesTags: ['products'],
+            keepUnusedDataFor: 24 * 60 * 60
         }),
         product: builder.query<ProductType, { id: string }>({
-            query: ({id}) => {
+            query: ({ id }) => {
                 return {
-                    url: `/products/`+id,
+                    url: `/products/` + id,
                 };
             },
+            keepUnusedDataFor: 24 * 60 * 60,
             //@ts-ignore
             providesTags: (result, error, arg) => [{ type: 'product', id: arg }]
         }),
