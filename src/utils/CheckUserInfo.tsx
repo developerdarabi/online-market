@@ -13,6 +13,7 @@ const CheckUserInfo = ({ children }: { children: React.ReactNode }) => {
     
     const getUserInfo = async () => {
         await userInfoApi().unwrap().then(async (info) => {
+            //@ts-ignore
             await cartsApi({ userId: info.id }).unwrap().then((carts: CartType[]) => {
                 cookies.set('token', cookies.get('token'))
                 initializeCarts({carts})

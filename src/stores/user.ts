@@ -25,6 +25,7 @@ const userStore = create<UserStore>((set) => ({
             userId: null
         }
     ],
+    //@ts-ignore
     addToCart: ({ productId, quantity }: CartProductType) => set((state: UserStore) => ({ ...state, carts: { ...state.carts, products: [...state.carts.products, { productId, quantity }] } })),
     initializeCarts: ({ carts }: { carts: CartType[] }) => set((state: UserStore) => ({ ...state, carts: carts })),
 }))
