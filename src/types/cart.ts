@@ -1,5 +1,5 @@
 export interface CartType {
-    id: null | number,
+    id?: null | number,
     userId: null | 3,
     date: null|string,
     products: CartProductType[],

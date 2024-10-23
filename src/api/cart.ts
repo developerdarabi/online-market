@@ -1,3 +1,4 @@
+import { CartType } from "../types/cart";
 import { ProductType } from "../types/products";
 import { baseApi } from "./baseApi";
 
@@ -11,9 +12,19 @@ export const cartApi = baseApi.injectEndpoints({
             },
             providesTags: ['carts'],
         }),
+        addToCart: builder.query<any, { cart: CartType }>({
+            query: (body) => {
+                return {
+                    url: `/carts/`,
+                    method:'post',
+                    body:body.cart
+                };
+            },
+        }),
     })
 });
 
 export const {
     useLazyCartsQuery,
+    useLazyAddToCartQuery
 } = cartApi;

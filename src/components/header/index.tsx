@@ -1,10 +1,10 @@
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { PiUserCircleLight } from 'react-icons/pi';
 import { Link, useLocation } from "react-router-dom";
-import { APP_NAME } from "../../Statics";
 import userStore from '../../stores/user';
-import HomeSlider from '../ui/HomeSlider';
+import { MaxWidth } from "../ui";
 import Logo from "../ui/Logo";
+import HeaderBanner from "./HeaderBanner";
 
 export default function DesktopHeader() {
     const { pathname } = useLocation()
@@ -12,11 +12,10 @@ export default function DesktopHeader() {
     const user = userStore(state => state.user)
 
     return (
-        <header className={`${pathname === '/' && ''} relative`}>
-            <div className=' sticky top-0 left-0 w-full z-[100] mb-4 py-4 bg-white text-primary p-2 px-20 flex items-center justify-between'>
-                <Link to={'/'} className="flex items-center justify-center gap-1">
-                    <span className="text-xl font-bold text-primary font-serif"><Logo /></span>
-                    <h1 className="text-4xl font-bold">{APP_NAME}</h1>
+        <>
+            <header className=' sticky top-0 left-0 w-full z-[100] mb-4 py-4 bg-white text-primary p-2 px-20 flex items-center justify-between'>
+                <Link to={'/'} >
+                    <Logo />
                 </Link>
                 <div className="flex items-center gap-6">
                     <Link className="text-xl font-medium hover:text-hover duration-100" to={'/'}>Home</Link>
@@ -38,13 +37,13 @@ export default function DesktopHeader() {
                             </Link>
                         ) : (
                             <>
-                                <Link to={'/auth'}>ورود / ثبت نام</Link>
+                                <Link to={'/auth'}>Login</Link>
                             </>
                         )
                     }
                 </div>
-            </div>
-            {pathname === '/' && <HomeSlider />}
-        </header>
+            </header>
+            {pathname === '/' && <MaxWidth><HeaderBanner /></MaxWidth>}
+        </>
     )
 }

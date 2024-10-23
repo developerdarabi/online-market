@@ -4,7 +4,8 @@ import { CartProductType, CartType } from "../types/cart"
 
 export default function CartPage() {
     const { carts } = userStore()
-
+    console.log(carts);
+    
     return (
         <div className="p-4">
             {
