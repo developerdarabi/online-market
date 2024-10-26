@@ -8,3 +8,12 @@ export function checkProductInCart(cartId: number,): CartProductType | undefined
     const foundedProduct = products.find((product: CartProductType) => product.productId === cartId)
     return foundedProduct
 }
+export function isCartsEmpty(): boolean {
+    const carts = userStore(state => state.carts)
+    return carts.every(cart => cart.products.length === 0)
+}
+
+export function getTodayDate(date:string){
+    const todayDate = new Date(date)
+    return todayDate.getFullYear()+'/'+todayDate.getUTCMonth()+'/'+todayDate.getDay()
+}

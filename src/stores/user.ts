@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import { UserType } from '../types/auth';
 import { CartProductType, CartType } from '../types/cart';
-import { ProductType } from '../types/products';
 
 interface UserStore {
     user: UserType | null;
@@ -29,19 +28,23 @@ const userStore = create<UserStore>((set) => ({
     ],
     //@ts-ignore
     addToCart: ({ productId, quantity }: CartProductType) => set((state: UserStore) => {
-        console.log(state.carts[0].date);
-        console.log(state.carts[1].date);
 
         return {
             ...state,
-            // carts:
-            // {
-            //     ...state.carts,
-            //     products: [
-            //         ...state.carts.products,
-            //         { productId, quantity }
-            //     ]
-            // }
+            carts:[
+                ...state.carts,
+                {
+                    products:[
+                        {
+                            productId,
+                            quantity
+                        }
+                    ],
+                    date:new Date(),
+                    id:Math.random(),
+                    userId:1
+                }
+            ]
         }
     }),
     changeProductQuantity: ({ cartId, productId, quantity }: { cartId: number } & CartProductType) => set((state: UserStore) => {

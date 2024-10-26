@@ -10,6 +10,7 @@ import TemplateWrapper from '../Templates'
 import CheckUserInfo from './CheckUserInfo'
 import { ProtectedRoute } from './ProtectedRoute'
 import CartPage from '../pages/Cart'
+import WishListPage from '../pages/WishList'
 
 export default function RoutesWrapper() {
     return (
@@ -25,6 +26,7 @@ export default function RoutesWrapper() {
                     <Route path='auth' element={<ProtectedRoute element={<AuthPage />} isMustLogin={false} />} />
                     <Route path='profile' element={<ProtectedRoute element={<ProfilePage />} isMustLogin={true} />} />
                     <Route path='cart' element={<CartPage />} />
+                    <Route path='wish-list' element={<WishListPage />} />
                 </Route>
                 <Route path='*' element={<NotFound />} />
             </Routes>

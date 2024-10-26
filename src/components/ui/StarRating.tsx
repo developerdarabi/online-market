@@ -7,9 +7,10 @@ interface Props {
   count?: number,
   onRatingChange?: (rate: number) => {},
   readOnly?: boolean
+  className?:string
 }
 
-const StarRating = ({ rating, count, onRatingChange, readOnly = false }: Props) => {
+const StarRating = ({ rating, count, onRatingChange, readOnly = false,className='' }: Props) => {
   const [hoveredStar, setHoveredStar] = useState<number | null>(null);
 
   const handleMouseEnter = (value: number) => {
@@ -52,7 +53,7 @@ const StarRating = ({ rating, count, onRatingChange, readOnly = false }: Props) 
   };
 
   return (
-    <div className="flex text-xs" >
+    <div className={`flex text-xs ${className}`} >
       {renderStars()}
       <span className="ms-2 text-gray-700">{rating.toFixed(1)}{count?`/${count}`:null}</span>
     </div>

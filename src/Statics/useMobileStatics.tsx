@@ -1,33 +1,31 @@
 import React from 'react';
 import { AiFillHome } from "react-icons/ai";
-import { ImCart } from "react-icons/im";
-import { AiFillProduct } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
-import { useLocation } from 'react-router-dom';
+import { ImCart } from "react-icons/im";
+import { IoMdHeart } from "react-icons/io";
 
 export default function useMobileStatics() {
-    const {pathname} = useLocation()
     
     const bottomNavigationItems = (): { title: string, icon: () => React.ReactNode, link: string }[] => {
         return [
             {
                 title: 'Home',
-                icon: () => <AiFillHome className={`${pathname!=='/'?'text-slate-600':'text-primary'}`} size={30} />,
+                icon: () => <AiFillHome size={22} />,
                 link: '/'
             },
             {
-                title: 'Products',
-                icon: () => <AiFillProduct className={`${pathname!=='/products'?'text-slate-600':'text-primary'}`} size={30} />,
-                link: '/products'
+                title: 'Wish list',
+                icon: () => <IoMdHeart size={22} />,
+                link: '/wish-list'
             },
             {
                 title: 'Cart',
-                icon: () => <ImCart className={`${pathname!=='/cart'?'text-slate-600':'text-primary'}`} size={28} />,
+                icon: () => <ImCart size={20} />,
                 link: '/cart'
             },
             {
                 title: 'Profile',
-                icon: () => <FaUser className={`${pathname!=='/profile'?'text-slate-600':'text-primary'}`} size={28} />,
+                icon: () => <FaUser size={20} />,
                 link: '/profile'
             },
         ]

@@ -1,10 +1,9 @@
 import { CartType } from "../types/cart";
-import { ProductType } from "../types/products";
 import { baseApi } from "./baseApi";
 
 export const cartApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({
-        carts: builder.query<ProductType[], { userId: number }>({
+        carts: builder.query<CartType[], { userId: number }>({
             query: (body) => {
                 return {
                     url: `/carts/user/` + body.userId,
@@ -16,8 +15,8 @@ export const cartApi = baseApi.injectEndpoints({
             query: (body) => {
                 return {
                     url: `/carts/`,
-                    method:'post',
-                    body:body.cart
+                    method: 'post',
+                    body: body.cart
                 };
             },
         }),

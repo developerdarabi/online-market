@@ -14,8 +14,17 @@
     }
 }
 
+
+
 @layer base {
     html {
         font-family: "tanha", system-ui, sans-serif;
+    }
+}
+
+
+@media (max-width: 768px) {
+    html {
+        background: #eef2ff;
     }
 }

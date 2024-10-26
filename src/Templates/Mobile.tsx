@@ -14,7 +14,7 @@ export default function MobileTemplate({ children }: { children: React.ReactNode
     }
 
     return (
-        <main className='bg-gradient-to-br from-[#f1f1f1]'>
+        <main className='bg-gradient-to-br from-background'>
             {
                 isInBottomNavigationLink() ? (
                     <MobileHeader />
