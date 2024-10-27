@@ -32,7 +32,7 @@ export default function CartPage() {
     const RenderTab = () => {
         if (activeTabId === 1) return <OrdersHistory />
         if (isCartsEmpty()) return <EmptyCarts />
-        return <div className="px-2 flex flex-col gap-8 pb-20">
+        return <div className="px-2 flex flex-col gap-8 pb-20 mt-4">
             {
                 carts.map((cart: CartType) => cart.products.length === 0 ? null : (
                     <div className="flex flex-col gap-4" key={cart.id}>
@@ -50,7 +50,7 @@ export default function CartPage() {
     const checkoutCount = calculateCheckout(data || [])
 
     const getCheckoutComponent = useMemo(() => {
-        return <div className="md:relative fixed md:w-1/3 w-full md:bottom-0 bottom-14 md:mt-0 mt-auto border bg-white p-4 left-0 pb-4 flex justify-between">
+        return <div className="md:relative z-[1] fixed md:w-1/3 w-full md:bottom-0 bottom-14 md:mt-0 mt-auto border bg-white p-4 left-0 pb-4 flex justify-between">
             <div className="flex flex-col gap-2">
                 <span className="text-sm font-medium  text-gray-500">Total</span>
                 <span className="text-sm font-medium">{checkoutCount}</span>
