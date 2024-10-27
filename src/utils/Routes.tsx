@@ -24,7 +24,7 @@ export default function RoutesWrapper() {
                         <Route path='*' element={<ProductNotFound />} />
                     </Route>
                     <Route path='auth' element={<ProtectedRoute element={<AuthPage />} isMustLogin={false} />} />
-                    <Route path='profile' element={<ProtectedRoute element={<ProfilePage />} isMustLogin={true} />} />
+                    <Route path='profile' element={<ProfilePage/>} />
                     <Route path='cart' element={<CartPage />} />
                     <Route path='wish-list' element={<WishListPage />} />
                 </Route>

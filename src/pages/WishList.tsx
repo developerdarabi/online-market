@@ -1,7 +1,9 @@
-import React from 'react'
+import EmptyWishList from '../components/wishList/Empty'
 
 export default function WishListPage() {
   return (
-    <div>WishList</div>
+    <div>
+      <EmptyWishList />
+    </div>
   )
 }

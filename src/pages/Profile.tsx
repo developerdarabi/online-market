@@ -4,9 +4,13 @@ import Cookies from "universal-cookie";
 import { MaxWidth } from "../components/ui";
 import UserAvatar from "../components/ui/UserAvatar";
 import userStore from "../stores/user";
+import AuthPage from "./Auth";
 
 export default function ProfilePage() {
     const { user, logout } = userStore()
+
+    if(!user)return <AuthPage/>
+
     const navigate = useNavigate()
     
     const cookies = new Cookies()
@@ -16,7 +20,6 @@ export default function ProfilePage() {
         logout()
         navigate('/')
     }
-
 
     return (
         <MaxWidth className="md:py-20 py-4">

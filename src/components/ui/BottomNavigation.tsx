@@ -5,7 +5,7 @@ export default function BottomNavigation() {
     const { bottomNavigationItems } = useMobileStatics()
     const { pathname } = useLocation()
     return (
-        <div className="fixed bottom-0 left-0 w-full h-14 bg-white grid max-w-lg grid-cols-4 mx-auto ">
+        <div className="fixed bottom-0 left-0 w-full h-14 bg-white grid grid-cols-4 mx-auto ">
             <style>
                 {keyframes}
             </style>
